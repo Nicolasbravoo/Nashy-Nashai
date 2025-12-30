@@ -1,0 +1,39 @@
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  text-align: center;
+  padding: 3rem;
+  border: 1px solid #a855f7;
+  backdrop-filter: blur(10px);
+}
+
+.popup h1 {
+  font-size: 3rem;
+  letter-spacing: 4px;
+}
+
+.links a {
+  display: block;
+  margin-top: 1rem;
+  color: #a855f7;
+  text-decoration: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+}
