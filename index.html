@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nashy Nashai - CAPÍTULO 0. Nuevo álbum disponible ahora en todas las plataformas.">
+    <meta name="keywords" content="Nashy Nashai, CAPÍTULO 0, música, álbum, artista">
+    <meta name="author" content="Nashy Nashai">
+    <title>Nashy Nashai - CAPÍTULO 0</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+    <!-- Modal de Álbum -->
+    <div id="albumModal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal" aria-label="Cerrar">&times;</button>
+            <div class="modal-body">
+                <h1 class="album-title">CAPÍTULO 0</h1>
+                <p class="album-subtitle">Nuevo álbum disponible ahora</p>
+                <div class="platform-buttons">
+                    <a href="https://music.youtube.com/playlist?list=OLAK5uy_lmSkgbuDjpwhazGqPF0xvBgxGcKbwzGYg" target="_blank" rel="noopener noreferrer" class="platform-btn youtube">
+                        <span class="platform-icon">▶</span>
+                        YouTube Music
+                    </a>
+                    <a href="#" class="platform-btn spotify">
+                        <span class="platform-icon">●</span>
+                        Spotify
+                    </a>
+                    <a href="#" class="platform-btn apple">
+                        <span class="platform-icon">🎵</span>
+                        Apple Music
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">NASHY NASHAI</div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Inicio</a></li>
+                <li><a href="#photos" class="nav-link">Fotos</a></li>
+                <li><a href="#singles" class="nav-link">Singles</a></li>
+                <li><a href="#merch" class="nav-link">Merch</a></li>
+                <li><a href="#news" class="nav-link">Noticias</a></li>
+                <li><a href="#shows" class="nav-link">Shows</a></li>
+                <li><a href="#press" class="nav-link">Prensa</a></li>
+                <li><a href="#more" class="nav-link">Más</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero con Video Background -->
+    <section id="home" class="hero">
+        <div class="video-container">
+            <video id="bgVideo" autoplay muted loop playsinline>
+                <source src="assets/video/visualizer.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <!-- Métricas del Álbum -->
+        <div class="album-metrics">
+            <div class="metric">
+                <span class="metric-value">2.4M</span>
+                <span class="metric-label">Reproducciones</span>
+            </div>
+            <div class="metric">
+                <span class="metric-value">12</span>
+                <span class="metric-label">Tracks</span>
+            </div>
+            <div class="metric">
+                <span class="metric-value">2024</span>
+                <span class="metric-label">Año</span>
+            </div>
+        </div>
+
+        <!-- Enlaces de Plataforma Flotantes -->
+        <div class="platform-links">
+            <a href="https://music.youtube.com/playlist?list=OLAK5uy_lmSkgbuDjpwhazGqPF0xvBgxGcKbwzGYg" target="_blank" rel="noopener noreferrer" class="platform-link" title="YouTube Music">
+                <span class="link-icon">▶</span>
+            </a>
+            <a href="#" class="platform-link" title="Spotify">
+                <span class="link-icon">●</span>
+            </a>
+            <a href="#" class="platform-link" title="Apple Music">
+                <span class="link-icon">🎵</span>
+            </a>
+        </div>
+
+        <div class="hero-content">
+            <h1 class="hero-title">CAPÍTULO 0</h1>
+            <p class="hero-subtitle">La nueva era comienza ahora</p>
+        </div>
+    </section>
+
+    <!-- Sección Fotos -->
+    <section id="photos" class="section photos-section">
+        <div class="container">
+            <h2 class="section-title">Fotos</h2>
+            <div class="photo-grid">
+                <div class="photo-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                <div class="photo-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                <div class="photo-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                <div class="photo-item" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                <div class="photo-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                <div class="photo-item" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Singles -->
+    <section id="singles" class="section singles-section">
+        <div class="container">
+            <h2 class="section-title">Singles</h2>
+            <div class="singles-grid">
+                <div class="single-card">
+                    <div class="single-cover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <h3 class="single-title">Track 01</h3>
+                    <p class="single-info">2024 • CAPÍTULO 0</p>
+                </div>
+                <div class="single-card">
+                    <div class="single-cover" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <h3 class="single-title">Track 02</h3>
+                    <p class="single-info">2024 • CAPÍTULO 0</p>
+                </div>
+                <div class="single-card">
+                    <div class="single-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                    <h3 class="single-title">Track 03</h3>
+                    <p class="single-info">2024 • CAPÍTULO 0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Merch -->
+    <section id="merch" class="section merch-section">
+        <div class="container">
+            <h2 class="section-title">Merch</h2>
+            <div class="merch-grid">
+                <div class="merch-item">
+                    <div class="merch-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <h3 class="merch-name">Camiseta CAPÍTULO 0</h3>
+                    <p class="merch-price">$35.00</p>
+                </div>
+                <div class="merch-item">
+                    <div class="merch-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <h3 class="merch-name">Hoodie Edición Limitada</h3>
+                    <p class="merch-price">$65.00</p>
+                </div>
+                <div class="merch-item">
+                    <div class="merch-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                    <h3 class="merch-name">Vinilo CAPÍTULO 0</h3>
+                    <p class="merch-price">$45.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Noticias -->
+    <section id="news" class="section news-section">
+        <div class="container">
+            <h2 class="section-title">Noticias</h2>
+            <div class="news-list">
+                <article class="news-item">
+                    <time class="news-date">15 Dic 2024</time>
+                    <h3 class="news-title">CAPÍTULO 0 alcanza 2 millones de reproducciones</h3>
+                    <p class="news-excerpt">El nuevo álbum de Nashy Nashai continúa rompiendo récords en todas las plataformas digitales...</p>
+                </article>
+                <article class="news-item">
+                    <time class="news-date">10 Dic 2024</time>
+                    <h3 class="news-title">Anunciada gira mundial 2025</h3>
+                    <p class="news-excerpt">Las fechas se revelarán pronto. Mantente atento a las redes sociales para más información...</p>
+                </article>
+                <article class="news-item">
+                    <time class="news-date">01 Dic 2024</time>
+                    <h3 class="news-title">Lanzamiento oficial de CAPÍTULO 0</h3>
+                    <p class="news-excerpt">El álbum más esperado del año ya está disponible en todas las plataformas...</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Shows -->
+    <section id="shows" class="section shows-section">
+        <div class="container">
+            <h2 class="section-title">Próximos Shows</h2>
+            <div class="shows-list">
+                <div class="show-item">
+                    <div class="show-date">
+                        <span class="show-day">20</span>
+                        <span class="show-month">ENE</span>
+                    </div>
+                    <div class="show-info">
+                        <h3 class="show-venue">Teatro Gran Rex</h3>
+                        <p class="show-location">Buenos Aires, Argentina</p>
+                    </div>
+                    <a href="#" class="show-btn">Tickets</a>
+                </div>
+                <div class="show-item">
+                    <div class="show-date">
+                        <span class="show-day">15</span>
+                        <span class="show-month">FEB</span>
+                    </div>
+                    <div class="show-info">
+                        <h3 class="show-venue">Movistar Arena</h3>
+                        <p class="show-location">Santiago, Chile</p>
+                    </div>
+                    <a href="#" class="show-btn">Tickets</a>
+                </div>
+                <div class="show-item">
+                    <div class="show-date">
+                        <span class="show-day">28</span>
+                        <span class="show-month">FEB</span>
+                    </div>
+                    <div class="show-info">
+                        <h3 class="show-venue">Arena Ciudad de México</h3>
+                        <p class="show-location">Ciudad de México, México</p>
+                    </div>
+                    <a href="#" class="show-btn">Tickets</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Prensa -->
+    <section id="press" class="section press-section">
+        <div class="container">
+            <h2 class="section-title">Prensa</h2>
+            <div class="press-grid">
+                <blockquote class="press-quote">
+                    <p>"CAPÍTULO 0 es una obra maestra contemporánea que redefine los límites del género."</p>
+                    <cite>— Rolling Stone</cite>
+                </blockquote>
+                <blockquote class="press-quote">
+                    <p>"Nashy Nashai demuestra por qué es una de las artistas más innovadoras de su generación."</p>
+                    <cite>— Billboard</cite>
+                </blockquote>
+                <blockquote class="press-quote">
+                    <p>"Un álbum visceral, emocional y técnicamente impecable."</p>
+                    <cite>— Pitchfork</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Más -->
+    <section id="more" class="section more-section">
+        <div class="container">
+            <h2 class="section-title">Más</h2>
+            <div class="more-content">
+                <p>Sígueme en redes sociales para contenido exclusivo, adelantos y más.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">TikTok</a>
+                    <a href="#" class="social-link">Facebook</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Nashy Nashai. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Privacidad</a>
+                <a href="#">Términos</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/popup.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
