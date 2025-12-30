@@ -8,8 +8,8 @@
 }
 
 :root {
-    --primary-color: #a855f7;
-    --secondary-color: #ec4899;
+    --primary-color: #8b0000;
+    --secondary-color: #ff0000;
     --dark-bg: #0a0a0a;
     --dark-card: #1a1a1a;
     --text-primary: #ffffff;
@@ -265,6 +265,9 @@ body {
 }
 
 /* Photos Section */
+.photos {
+    width: 100%;
+}
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -272,6 +275,7 @@ body {
 }
 
 .photo-item {
+    overflow: hidden;
     aspect-ratio: 1;
     border-radius: 8px;
     transition: var(--transition);
