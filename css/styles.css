@@ -268,6 +268,7 @@ body {
 .photos {
     width: 100%;
 }
+
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -287,7 +288,8 @@ body {
     box-shadow: 0 10px 40px rgba(168, 85, 247, 0.3);
 }
 
-/* Singles Section */
+/* Singles Section - CSS Completo con Imágenes */
+
 .singles-section {
     background: var(--dark-card);
 }
@@ -312,21 +314,90 @@ body {
     box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
 }
 
+.single-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .single-cover {
+    position: relative;
     aspect-ratio: 1;
     border-radius: 8px;
     margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.single-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.single-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.play-icon {
+    font-size: 3rem;
+    color: var(--text-primary);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.single-card:hover .single-overlay {
+    opacity: 1;
+}
+
+.single-card:hover .play-icon {
+    transform: scale(1);
+}
+
+.single-card:hover .single-image {
+    transform: scale(1.1);
 }
 
 .single-title {
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    color: var(--text-primary);
 }
 
 .single-info {
     color: var(--text-secondary);
     font-size: 0.9rem;
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .singles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .single-card {
+        padding: 1.2rem;
+    }
+    
+    .single-title {
+        font-size: 1.1rem;
+    }
+    
+    .play-icon {
+        font-size: 2.5rem;
+    }
 }
 
 /* Merch Section */
@@ -569,6 +640,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -582,18 +654,641 @@ body {
 }
 
 /* Animations */
-@keyframes fadeInUp{
-from {
-opacity: 0;
-transform: translateY(30px);
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-to {
-opacity: 1;
-transform: translateY(0);
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE OPTIMIZADO
+   ======================================== */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 10, 0.98);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        display: none;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .platform-links {
+        right: 1rem;
+        gap: 0.8rem;
+    }
+    
+    .platform-link {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .album-metrics {
+        gap: 2rem;
+        bottom: 6rem;
+    }
+    
+    .metric-value {
+        font-size: 1.5rem;
+    }
+    
+    .metric-label {
+        font-size: 0.8rem;
+    }
+    
+    .section {
+        padding: 4rem 0;
+    }
+    
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .show-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .show-date {
+        min-width: auto;
+    }
 }
+
+/* Móviles pequeños - Menos de 480px */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .nav-logo {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-title {
+        font-size: clamp(2rem, 12vw, 3rem);
+        letter-spacing: 2px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    
+    .album-metrics {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        bottom: 4rem;
+        width: 90%;
+        justify-content: center;
+    }
+    
+    .metric {
+        min-width: 80px;
+    }
+    
+    .metric-value {
+        font-size: 1.3rem;
+    }
+    
+    .metric-label {
+        font-size: 0.75rem;
+    }
+    
+    .platform-links {
+        right: 0.5rem;
+        gap: 0.6rem;
+    }
+    
+    .platform-link {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .link-icon {
+        font-size: 1rem;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .section-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        margin-bottom: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    /* Grids responsive */
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .singles-grid,
+    .merch-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .press-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Cards más compactos */
+    .single-card,
+    .merch-item {
+        padding: 1.2rem;
+    }
+    
+    .single-title,
+    .merch-name {
+        font-size: 1.1rem;
+    }
+    
+    .merch-price {
+        font-size: 1.3rem;
+    }
+    
+    /* News y Press más compactos */
+    .news-item,
+    .press-quote {
+        padding: 1.5rem;
+    }
+    
+    .news-title {
+        font-size: 1.2rem;
+    }
+    
+    .news-excerpt {
+        font-size: 0.95rem;
+    }
+    
+    .press-quote p {
+        font-size: 1rem;
+    }
+    
+    /* Shows responsive */
+    .show-item {
+        padding: 1.5rem;
+    }
+    
+    .show-day {
+        font-size: 2rem;
+    }
+    
+    .show-venue {
+        font-size: 1.1rem;
+    }
+    
+    .show-location {
+        font-size: 0.9rem;
+    }
+    
+    .show-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    /* Social links responsive */
+    .social-links {
+        gap: 1rem;
+    }
+    
+    .social-link {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    /* Footer responsive */
+    .footer {
+        padding: 2rem 0;
+    }
+    
+    .footer-links {
+        gap: 1rem;
+    }
 }
+
+/* Móviles muy pequeños - Menos de 360px */
+@media (max-width: 360px) {
+    .nav-logo {
+        font-size: 1rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.8rem, 10vw, 2.5rem);
+    }
+    
+    .album-metrics {
+        gap: 1rem;
+        bottom: 3rem;
+    }
+    
+    .metric {
+        min-width: 70px;
+    }
+    
+    .metric-value {
+        font-size: 1.1rem;
+    }
+    
+    .metric-label {
+        font-size: 0.7rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .container {
+        padding: 0 0.8rem;
+    }
+    
+    .show-item {
+        padding: 1.2rem;
+    }
+    
+    .social-link {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   NAVEGACIÓN MOBILE - MEJORAS
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Menú mobile oculto por defecto */
+    .nav-menu {
+        position: fixed;
+        top: 65px; /* Altura del navbar */
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+        border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+    }
+    
+    /* Menú mobile activo */
+    .nav-menu.active {
+        max-height: 500px;
+        opacity: 1;
+    }
+    
+    /* Animación del botón hamburguesa */
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Links del menú mobile */
+    .nav-menu .nav-link {
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .nav-menu .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        top: 60px;
+        padding: 1.5rem;
+    }
+    
+    .nav-menu .nav-link {
+        font-size: 1.1rem;
+    }
+}
+
+/* Imágenes en platform links */
+.link-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Hace la imagen blanca */
+    transition: var(--transition);
+}
+
+.platform-link:hover .link-icon-img {
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+/* Responsive para mobile */
+@media (max-width: 480px) {
+    .link-icon-img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ============================================
+   ANIMACIÓN DE MÉTRICAS MEJORADA
+   ============================================ */
+
+.metric {
+    text-align: center;
+    position: relative;
+}
+
+.metric::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0;
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.metric:nth-child(1)::before {
+    animation-delay: 0s;
+}
+
+.metric:nth-child(2)::before {
+    animation-delay: 0.3s;
+}
+
+.metric:nth-child(3)::before {
+    animation-delay: 0.6s;
+}
+
+@keyframes pulse-dot {
+    0%, 100% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.2);
+    }
+}
+
+.metric-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-variant-numeric: tabular-nums; /* Números monoespaciados */
+    min-height: 2.5rem; /* Evita saltos durante la animación */
+}
+
+.metric-value:hover {
+    transform: scale(1.1);
+}
+
+.metric-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+    transition: opacity 0.3s ease;
+    min-height: 1.5rem; /* Evita saltos durante la animación */
+}
+
+/* Efecto de "cargando" */
+.metric-loading .metric-value {
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Versión responsive */
+@media (max-width: 480px) {
+    .metric::before {
+        width: 4px;
+        height: 4px;
+        top: -8px;
+    }
+    
+    .metric-value {
+        font-size: 1.3rem;
+        min-height: 2rem;
+    }
+    
+    .metric-label {
+        font-size: 0.75rem;
+        min-height: 1.2rem;
+    }
+}
+
+/* ============================================
+   HERO TITLE - INTERACTIVO CON MOUSE
+   ============================================ */
+
+.hero-title {
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+    cursor: default;
+    display: inline-block;
+}
+
+.title-letter {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease backwards;
+    position: relative;
+}
+
+/* Animación de entrada escalonada */
+.title-letter:nth-child(1) { animation-delay: 0.1s; }
+.title-letter:nth-child(2) { animation-delay: 0.15s; }
+.title-letter:nth-child(3) { animation-delay: 0.2s; }
+.title-letter:nth-child(4) { animation-delay: 0.25s; }
+.title-letter:nth-child(5) { animation-delay: 0.3s; }
+.title-letter:nth-child(6) { animation-delay: 0.35s; }
+.title-letter:nth-child(7) { animation-delay: 0.4s; }
+.title-letter:nth-child(8) { animation-delay: 0.45s; }
+.title-letter:nth-child(9) { animation-delay: 0.5s; }
+
+.title-space {
+    display: inline-block;
+    width: 0.5em;
+}
+
+/* Efecto hover individual en cada letra */
+.title-letter:hover {
+    transform: translateY(-10px) scale(1.2) rotate(-5deg);
+    text-shadow: 
+        0 0 20px rgba(139, 0, 0, 0.8),
+        0 0 40px rgba(255, 0, 0, 0.6),
+        0 10px 30px rgba(0, 0, 0, 0.5);
+    filter: brightness(1.3);
+}
+
+/* Efecto de glitch aleatorio */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+        text-shadow: 0 0 20px rgba(139, 0, 0, 0.8);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+        text-shadow: 
+            -2px -2px 0 rgba(255, 0, 0, 0.7),
+            2px 2px 0 rgba(139, 0, 0, 0.7);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+        text-shadow: 
+            2px -2px 0 rgba(255, 0, 0, 0.7),
+            -2px 2px 0 rgba(139, 0, 0, 0.7);
+    }
+    60% {
+        transform: translate(2px, 2px);
+        text-shadow: 
+            -2px 2px 0 rgba(255, 0, 0, 0.7),
+            2px -2px 0 rgba(139, 0, 0, 0.7);
+    }
+    80% {
+        transform: translate(2px, -2px);
+        text-shadow: 
+            -2px 2px 0 rgba(255, 0, 0, 0.7),
+            2px -2px 0 rgba(139, 0, 0, 0.7);
+    }
+    100% {
+        transform: translate(0);
+        text-shadow: 0 0 20px rgba(139, 0, 0, 0.8);
+    }
+}
+
+/* Activar glitch al hacer hover sobre el título completo */
+.hero-title:hover .title-letter {
+    animation: glitch 0.3s ease;
+}
+
+/* Pulso de brillo constante */
+@keyframes titlePulse {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+}
+
+.hero-title {
+    animation: titlePulse 4s ease-in-out infinite;
+}
+
+/* Efecto de onda al pasar el mouse */
+.title-letter.wave {
+    animation: wave 0.6s ease;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(-10deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* Efecto parallax suave */
+.hero-title.parallax {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
 /* Responsive */
-@media (max-width: 768px){
-.nav-toggle {
-display: flex;
-}}
+@media (max-width: 768px) {
+    .hero-title {
+        letter-spacing: 2px;
+    }
+    
+    .title-letter:hover {
+        transform: translateY(-8px) scale(1.15);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        letter-spacing: 1px;
+    }
+    
+    .title-letter:hover {
+        transform: translateY(-5px) scale(1.1);
+    }
+    
+    .title-space {
+        width: 0.3em;
+    }
+}

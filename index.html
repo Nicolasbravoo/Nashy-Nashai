@@ -11,31 +11,35 @@
     <link rel="stylesheet" href="css/popup.css">
 </head>
 <body>
-    <!-- Modal de Álbum -->
-    <div id="albumModal" class="modal">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <button class="modal-close" id="closeModal" aria-label="Cerrar">&times;</button>
-            <div class="modal-body">
-                <h1 class="album-title">CAPÍTULO 0</h1>
-                <p class="album-subtitle">Nuevo álbum disponible ahora</p>
-                <div class="platform-buttons">
-                    <a href="https://music.youtube.com/playlist?list=OLAK5uy_lmSkgbuDjpwhazGqPF0xvBgxGcKbwzGYg" target="_blank" rel="noopener noreferrer" class="platform-btn youtube">
-                        <span class="platform-icon">▶</span>
-                        YouTube Music
-                    </a>
-                    <a href="#" class="platform-btn spotify">
-                        <span class="platform-icon">●</span>
-                        Spotify
-                    </a>
-                    <a href="#" class="platform-btn apple">
-                        <span class="platform-icon">🎵</span>
-                        Apple Music
-                    </a>
-                </div>
+    <!-- Modal de Álbum con Imagen de Fondo -->
+<div id="albumModal" class="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+        <!-- Imagen de fondo -->
+        <div class="modal-bg-image" style="background-image: url('assets/img/nashy_nashai_1765407600_3784694020157994806.jpg');"></div>
+        <div class="modal-overlay"></div>
+        
+        <button class="modal-close" id="closeModal" aria-label="Cerrar">&times;</button>
+        <div class="modal-body">
+            <h1 class="album-title">CAPÍTULO 0</h1>
+            <p class="album-subtitle">Nuevo álbum disponible ahora</p>
+            <div class="platform-buttons">
+                <a href="https://music.youtube.com/playlist?list=OLAK5uy_lmSkgbuDjpwhazGqPF0xvBgxGcKbwzGYg" target="_blank" rel="noopener noreferrer" class="platform-btn youtube">
+                    <span class="platform-icon">▶</span>
+                    YouTube Music
+                </a>
+                <a href="https://open.spotify.com/intl-es/album/5otit9EnIcRtFlYHkzxFhz?si=hIISsdb6Q3GK2vwC1b3rlA" target="_blank" rel="noopener noreferrer" class="platform-btn spotify">
+                    <span class="platform-icon">●</span>
+                    Spotify
+                </a>
+                <a href="#" class="platform-btn apple">
+                    <span class="platform-icon">🎵</span>
+                    Apple Music
+                </a>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Navegación -->
     <nav class="navbar" id="navbar">
@@ -62,7 +66,7 @@
     <!-- Hero con Video Background -->
     <section id="home" class="hero">
         <div class="video-container">
-            <video id="bgVideo" autoplay muted loop playsinline>
+            <video id="bgVideo" autoplay loop playsinline>
                 <source src="assets/video/capitulo0-visualizer.mp4" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
             </video>
@@ -87,21 +91,33 @@
 
         <!-- Enlaces de Plataforma Flotantes -->
         <div class="platform-links">
-            <a href="https://music.youtube.com/playlist?list=OLAK5uy_lmSkgbuDjpwhazGqPF0xvBgxGcKbwzGYg" target="_blank" rel="noopener noreferrer" class="platform-link" title="YouTube Music">
-                <span class="link-icon">▶</span>
-            </a>
-            <a href="https://open.spotify.com/intl-es/album/5otit9EnIcRtFlYHkzxFhz?si=hIISsdb6Q3GK2vwC1b3rlA" target="_blank" class="platform-link" title="Spotify">
-                <span class="link-icon">▶</span>
+            <a href="https://open.spotify.com/intl-es/album/5otit9EnIcRtFlYHkzxFhz?si=hIISsdb6Q3GK2vwC1b3rlA"
+            target="_blank" rel="noopener noreferrer" class="platform-link" title="Spotify">
+            <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Primary_Logo_RGB_Black.png" alt="Spotify" class="link-icon-img">
+            </a>        
+            <a href= "https://music.youtube.com/playlist?list=OLAK5uy_lmSkgbuDjpwhazGqPF0xvBgxGcKbwzGYg" target="_blank" class="platform-link" title="Youtube Music">
+                <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Primary_Logo_RGB_Black.png" alt="Spotify" class="link-icon-img">
             </a>
             <a href="#" class="platform-link" title="Apple Music">
-                <span class="link-icon">🎵</span>
+                <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Primary_Logo_RGB_Black.png" alt="Spotify" class="link-icon-img">
             </a>
         </div>
 
         <div class="hero-content">
-            <h1 class="hero-title">CAPÍTULO 0</h1>
-            <p class="hero-subtitle">La nueva era comienza ahora</p>
-        </div>
+    <h1 class="hero-title" id="heroTitle">
+        <span class="title-letter">C</span>
+        <span class="title-letter">A</span>
+        <span class="title-letter">P</span>
+        <span class="title-letter">Í</span>
+        <span class="title-letter">T</span>
+        <span class="title-letter">U</span>
+        <span class="title-letter">L</span>
+        <span class="title-letter">O</span>
+        <span class="title-space"> </span>
+        <span class="title-letter">0</span>
+    </h1>
+    <p class="hero-subtitle">La nueva era comienza ahora</p>
+</div>
     </section>
 
     <!-- Sección Fotos -->
@@ -123,28 +139,54 @@
     </section>
 
     <!-- Sección Singles -->
-    <section id="singles" class="section singles-section">
-        <div class="container">
-            <h2 class="section-title">Singles</h2>
-            <div class="singles-grid">
-                <div class="single-card">
-                    <div class="single-cover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-                    <h3 class="single-title">Track 01</h3>
-                    <p class="single-info">2024 • CAPÍTULO 0</p>
-                </div>
-                <div class="single-card">
-                    <div class="single-cover" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
-                    <h3 class="single-title">Track 02</h3>
-                    <p class="single-info">2024 • CAPÍTULO 0</p>
-                </div>
-                <div class="single-card">
-                    <div class="single-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-                    <h3 class="single-title">Track 03</h3>
-                    <p class="single-info">2024 • CAPÍTULO 0</p>
-                </div>
+<section id="singles" class="section singles-section">
+    <div class="container">
+        <h2 class="section-title">Singles</h2>
+        <div class="singles-grid">
+            <!-- Single 1 -->
+            <div class="single-card">
+                <a href="https://music.youtube.com/watch?v=Jq5Zz8r32GI&si=5Mq8VjFEELBM4aNH" target="_blank" class="single-link"> 
+                    <div class="single-cover">
+                        <img src="assets/img/traidora.jpg" alt="Traidora Cover" class="single-image">
+                        <div class="single-overlay">
+                            <span class="play-icon">▶</span>
+                        </div>
+                    </div>
+                    <h3 class="single-title">Traidora</h3>
+                    <p class="single-info">Nashy Nashai ft OsitoWito</p>
+                </a>
+            </div>
+
+            <!-- Single 2 -->
+            <div class="single-card">
+                <a href="https://music.youtube.com/watch?v=LMnO5PXewPQ&si=fSVAg2UAxN4uvgJs" target="_blank" class="single-link">
+                    <div class="single-cover">
+                        <img src="assets/img/ABC.jpg" alt="Track 02 Cover" class="single-image">
+                        <div class="single-overlay">
+                            <span class="play-icon">▶</span>
+                        </div>
+                    </div>
+                    <h3 class="single-title">ABC</h3>
+                    <p class="single-info">Nashy Nashai - 2024</p>
+                </a>
+            </div>
+
+            <!-- Single 3 -->
+            <div class="single-card">
+                <a href="https://music.youtube.com/watch?v=99zbAQJRBAs&list=OLAK5uy_nen6czIHovNds4bRIeor6hu_Nu92kazTc" target="_blank" class="single-link">
+                    <div class="single-cover">
+                        <img src="assets/img/UWU.jpg" alt="Track 03 Cover" class="single-image">
+                        <div class="single-overlay">
+                            <span class="play-icon">▶</span>
+                        </div>
+                    </div>
+                    <h3 class="single-title">UwU</h3>
+                    <p class="single-info">2025 • Nashy Nashai</p>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Sección Merch -->
     <section id="merch" class="section merch-section">
